@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+// 1. Import your logo here
+// Adjust the path if your Navbar is in a different folder
+import logo from '../assets/logo3.png'; 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,11 +29,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
 
-          {/* Logo */}
+          {/* 2. Updated Logo Section */}
           <NavLink to="/" className="flex items-center">
-            <span className="font-heading text-2xl font-bold text-brand-wine">
-              BookACarter
-            </span>
+            <img 
+              src={logo} 
+              alt="BookACarter Logo" 
+              className="h-12 w-auto" /* Adjust h-12 to make it bigger/smaller (e.g., h-10, h-16) */
+            />
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -79,7 +85,7 @@ export default function Navbar() {
               </NavLink>
 
             </div>
-          </nav>
+          </nav> 
 
           {/* Mobile Menu Button */}
           <button
