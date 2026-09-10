@@ -6,8 +6,11 @@ import {
   PartyPopper, 
   ShieldCheck, 
   Users, 
-  Heart, 
-  CheckCircle 
+  CheckCircle,
+  Star,
+  Lock,
+  ChefHat,
+  Eye
 } from 'lucide-react';
 
 export default function About() {
@@ -72,7 +75,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 3. WHY CHOOSE US (COMPANY VALUES) */}
+      {/* 3. WHY CHOOSE US (UPGRADED GRID) */}
       <section className="py-20 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -80,28 +83,56 @@ export default function About() {
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">We are more than just a directory. We are your partner in planning.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center mb-6">
-                <ShieldCheck size={32} className="text-brand-gold" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={28} className="text-brand-gold" />
               </div>
-              <h3 className="text-xl font-bold text-brand-charcoal mb-3">Trusted Professionals</h3>
-              <p className="text-gray-600 leading-relaxed">Every caterer on our platform is vetted for quality, hygiene, and reliability so you can book with absolute confidence.</p>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Verified Caterers</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Every caterer on our platform is strictly vetted for quality, hygiene, and reliability so you can book with confidence.</p>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto bg-red-50 rounded-full flex items-center justify-center mb-6">
-                <Heart size={32} className="text-brand-wine" />
+
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mb-4">
+                <Eye size={28} className="text-brand-wine" />
               </div>
-              <h3 className="text-xl font-bold text-brand-charcoal mb-3">Transparent Choices</h3>
-              <p className="text-gray-600 leading-relaxed">No hidden fees or surprise menus. View starting prices, read genuine reviews, and compare options side-by-side.</p>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Transparent Pricing</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">No hidden fees or surprise costs. View starting prices clearly and compare options side-by-side before inquiring.</p>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6">
-                <Users size={32} className="text-blue-600" />
+
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Star size={28} className="text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-brand-charcoal mb-3">Direct Connections</h3>
-              <p className="text-gray-600 leading-relaxed">We cut out the middleman. Send your requirements directly to the caterer and negotiate exactly what you want.</p>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Customer Reviews</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Read genuine reviews and ratings from past customers to make an informed decision for your special day.</p>
             </div>
+
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mb-4">
+                <ChefHat size={28} className="text-green-600" />
+              </div>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Wide Choice</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">From traditional local Telugu cuisines to global menus, find the perfect culinary match for any event size.</p>
+            </div>
+
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center mb-4">
+                <Lock size={28} className="text-purple-600" />
+              </div>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Secure Enquiries</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Your event details and contact information are kept safe and shared only securely to facilitate your booking.</p>
+            </div>
+
+            <div className="bg-brand-cream/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-orange-50 rounded-full flex items-center justify-center mb-4">
+                <Users size={28} className="text-orange-600" />
+              </div>
+              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Direct Connections</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">We cut out the middleman. Send your requirements directly to the caterer and negotiate exactly what you want.</p>
+            </div>
+
           </div>
         </div>
       </section>

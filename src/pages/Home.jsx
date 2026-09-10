@@ -49,35 +49,58 @@ export default function Home() {
             Find the Perfect Caterer for Your Event
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-brand-cream drop-shadow-sm">
-            Discover trusted catering services across Hyderabad and connect directly with catering professionals for your next celebration.
+             Compare catering services, explore menus and book the right caterer for your occasion.
           </p>
           
-          {/* Search Box */}
-          <form onSubmit={handleSearch} className="max-w-4xl mx-auto bg-white rounded-lg p-2 md:p-4 shadow-2xl flex flex-col md:flex-row gap-4 mb-8">
-            <div className="flex-1 flex items-center bg-gray-50 rounded-md p-3 border border-gray-200 focus-within:border-brand-wine transition-colors">
-              <MapPin className="text-gray-400 mr-2 flex-shrink-0" size={20} />
-              <select className="bg-transparent w-full outline-none text-brand-charcoal cursor-pointer">
-                <option value="">Where is your event?</option>
-                <option value="banjara-hills">Banjara Hills</option>
-                <option value="gachibowli">Gachibowli</option>
-                <option value="hitech-city">Hitech City</option>
-                <option value="madhapur">Madhapur</option>
-                <option value="kukatpally">Kukatpally</option>
-              </select>
-            </div>
-            <div className="flex-1 flex items-center bg-gray-50 rounded-md p-3 border border-gray-200 focus-within:border-brand-wine transition-colors">
-              <ChefHat className="text-gray-400 mr-2 flex-shrink-0" size={20} />
-              <select className="bg-transparent w-full outline-none text-brand-charcoal cursor-pointer">
-                <option value="">What type of event?</option>
-                <option value="wedding">Wedding</option>
-                <option value="corporate">Corporate</option>
-                <option value="birthday">Birthday</option>
-                <option value="house-function">House Function</option>
-              </select>
-            </div>
-            <button type="submit" className="bg-brand-wine text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all flex items-center justify-center flex-shrink-0 shadow-sm">
-              <Search size={20} className="mr-2" /> Search Caterers
-            </button>
+<form onSubmit={handleSearch} className="max-w-4xl mx-auto bg-white rounded-lg p-2 md:p-4 shadow-2xl flex flex-col md:flex-row gap-4 mb-8"> 
+            
+            {/* Location Dropdown */}
+            <div className="flex-1 flex items-center bg-gray-50 rounded-md p-3 border border-gray-200 focus-within:border-brand-wine transition-colors"> 
+              <MapPin className="text-gray-400 mr-2 flex-shrink-0" size={20} /> 
+              <select className="bg-transparent w-full outline-none text-brand-charcoal cursor-pointer"> 
+                <option value="">Where is your event?</option> 
+                <option value="hyderabad">Hyderabad</option>
+                <option value="secunderabad">Secunderabad</option>
+                <option value="banjara-hills">Banjara Hills</option> 
+                <option value="jubilee-hills">Jubilee Hills</option>
+                <option value="madhapur">Madhapur</option> 
+                <option value="hitec-city">HITEC City</option> 
+                <option value="gachibowli">Gachibowli</option> 
+                <option value="kondapur">Kondapur</option>
+                <option value="kukatpally">Kukatpally</option> 
+                <option value="miyapur">Miyapur</option>
+                <option value="bachupally">Bachupally</option>
+                <option value="uppal">Uppal</option>
+                <option value="lb-nagar">LB Nagar</option>
+                <option value="dilsukhnagar">Dilsukhnagar</option>
+                <option value="mehdipatnam">Mehdipatnam</option>
+                <option value="tolichowki">Tolichowki</option>
+                <option value="attapur">Attapur</option>
+                <option value="kompally">Kompally</option>
+                <option value="sainikpuri">Sainikpuri</option>
+                <option value="shamshabad">Shamshabad</option>
+              </select> 
+            </div> 
+            
+            {/* Event Type Dropdown */}
+            <div className="flex-1 flex items-center bg-gray-50 rounded-md p-3 border border-gray-200 focus-within:border-brand-wine transition-colors"> 
+              <ChefHat className="text-gray-400 mr-2 flex-shrink-0" size={20} /> 
+              <select className="bg-transparent w-full outline-none text-brand-charcoal cursor-pointer"> 
+                <option value="">What type of event?</option> 
+                <option value="wedding">Weddings</option> 
+                <option value="birthday">Birthday Parties</option> 
+                <option value="corporate">Corporate Events</option> 
+                <option value="engagement">Engagements</option> 
+                <option value="housewarming">Housewarming</option> 
+                <option value="baby-function">Baby Functions</option> 
+                <option value="religious">Religious Events</option> 
+                <option value="outdoor">Outdoor Events</option> 
+              </select> 
+            </div> 
+            
+            <button type="submit" className="bg-brand-wine text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all flex items-center justify-center flex-shrink-0 shadow-sm"> 
+              <Search size={20} className="mr-2" /> Search Caterers 
+            </button> 
           </form>
 
 <div className="flex flex-wrap justify-center gap-4 text-sm font-medium mt-4">
