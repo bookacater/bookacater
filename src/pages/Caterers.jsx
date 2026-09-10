@@ -47,11 +47,27 @@ export default function Caterers() {
                 value={locationFilter}
                 onChange={(e) => setLocationFilter(e.target.value)}
               >
-                <option value="">All Locations</option>
-                <option value="Banjara Hills">Banjara Hills</option>
-                <option value="Gachibowli">Gachibowli</option>
-                <option value="Kukatpally">Kukatpally</option>
-                <option value="Secunderabad">Secunderabad</option>
+               <option value="">Where is your event?</option> 
+                <option value="hyderabad">Hyderabad</option>
+                <option value="secunderabad">Secunderabad</option>
+                <option value="banjara-hills">Banjara Hills</option> 
+                <option value="jubilee-hills">Jubilee Hills</option>
+                <option value="madhapur">Madhapur</option> 
+                <option value="hitec-city">HITEC City</option> 
+                <option value="gachibowli">Gachibowli</option> 
+                <option value="kondapur">Kondapur</option>
+                <option value="kukatpally">Kukatpally</option> 
+                <option value="miyapur">Miyapur</option>
+                <option value="bachupally">Bachupally</option>
+                <option value="uppal">Uppal</option>
+                <option value="lb-nagar">LB Nagar</option>
+                <option value="dilsukhnagar">Dilsukhnagar</option>
+                <option value="mehdipatnam">Mehdipatnam</option>
+                <option value="tolichowki">Tolichowki</option>
+                <option value="attapur">Attapur</option>
+                <option value="kompally">Kompally</option>
+                <option value="sainikpuri">Sainikpuri</option>
+                <option value="shamshabad">Shamshabad</option>
               </select>
 
               <select 
