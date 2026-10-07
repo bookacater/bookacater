@@ -2,7 +2,7 @@ export const caterers = [
  {
     id: "agasthya-hotel",
     name: "Agasthya Hotel",
-    image: "https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1723867267202-169dfe3b197a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMGNhdGVyaW5nfGVufDB8fDB8fHww",
     location: "Hitec City, Hyderabad",
     rating: 4.8,
     reviews: 50,
@@ -56,7 +56,7 @@ export const caterers = [
   {
     id: "bhavani-foods-caterings",
     name: "Bhavani Foods and Caterings",
-    image: "https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1723291340092-2eb79b9b878a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2QlMjBjYXRlcmluZ3xlbnwwfHwwfHx8MA%3D%3D",
     location: "Karimnagar, Telangana",
     rating: 4.9,
     reviews: 30,
