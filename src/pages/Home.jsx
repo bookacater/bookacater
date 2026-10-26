@@ -1,9 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { caterers } from '../data/caterers';
-// Add these to your existing lucide-react imports at the top
 import { Search, MapPin, ChefHat, Star, ArrowRight, Compass, FileText, CheckCircle2 } from 'lucide-react';
 
-// Demo categories data based on your original business plan
+// Demo categories data
 const cateringCategories = [
   {
     title: "Wedding Catering",
@@ -27,9 +26,28 @@ const cateringCategories = [
   }
 ];
 
+// Static Data for 2 Promotional Ads
+const promotionalAds = [
+  {
+    id: 1,
+    title: "Wedding Season Offer",
+    description: "Book your wedding catering this month and get a free live dessert counter for your guests.",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=300&q=80",
+    linkText: "Claim Offer",
+    linkUrl: "/caterers"
+  },
+  {
+    id: 2,
+    title: "Corporate Lunch Combos",
+    description: "Affordable, hygienic, and delicious daily lunch boxes delivered straight to your office.",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300&q=80",
+    linkText: "View Menus",
+    linkUrl: "/services"
+  }
+];
+
 export default function Home() {
   const navigate = useNavigate();
-  // Slicing up to 6 caterers for a fuller grid on desktop (2 rows of 3)
   const featured = caterers.slice(0, 6);
 
   const handleSearch = (e) => {
@@ -52,7 +70,7 @@ export default function Home() {
              Compare catering services, explore menus and book the right caterer for your occasion.
           </p>
           
-<form onSubmit={handleSearch} className="max-w-4xl mx-auto bg-white rounded-lg p-2 md:p-4 shadow-2xl flex flex-col md:flex-row gap-4 mb-8"> 
+          <form onSubmit={handleSearch} className="max-w-4xl mx-auto bg-white rounded-lg p-2 md:p-4 shadow-2xl flex flex-col md:flex-row gap-4 mb-8"> 
             
             {/* Location Dropdown */}
             <div className="flex-1 flex items-center bg-gray-50 rounded-md p-3 border border-gray-200 focus-within:border-brand-wine transition-colors"> 
@@ -103,24 +121,86 @@ export default function Home() {
             </button> 
           </form>
 
-<div className="flex flex-wrap justify-center gap-4 text-sm font-medium mt-4">
-  <Link 
-    to="/caterers" 
-    className="px-5 py-2 rounded-full bg-white/10 hover:bg-brand-wine border border-white/20 hover:border-brand-wine text-white transition-all duration-300 backdrop-blur-sm shadow-sm"
-  >
-    Browse all caterers
-  </Link>
-  <Link 
-    to="/list-your-business" 
-    className="px-5 py-2 rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-charcoal border border-white/20 hover:border-brand-gold text-white transition-all duration-300 backdrop-blur-sm shadow-sm"
-  >
-    List Your Catering Business
-  </Link>
-</div>
+          <div className="flex flex-wrap justify-center gap-4 text-sm font-medium mt-4">
+            <Link 
+              to="/caterers" 
+              className="px-5 py-2 rounded-full bg-white/10 hover:bg-brand-wine border border-white/20 hover:border-brand-wine text-white transition-all duration-300 backdrop-blur-sm shadow-sm"
+            >
+              Browse all caterers
+            </Link>
+            <Link 
+              to="/list-your-business" 
+              className="px-5 py-2 rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-charcoal border border-white/20 hover:border-brand-gold text-white transition-all duration-300 backdrop-blur-sm shadow-sm"
+            >
+              List Your Catering Business
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 2. CATERING CATEGORIES SECTION (NEW) */}
+      {/* PROMOTIONAL ADS SECTION (COMPACT & SLIDING LEFT TO RIGHT) */}
+      <section className="py-20 bg-gray-50 border-b border-gray-200 overflow-hidden relative">
+        <style>
+          {`
+            @keyframes slideRight {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
+            }
+            .animate-slide-right {
+              display: flex;
+              width: max-content;
+              animation: slideRight 45s linear infinite;
+            }
+            .animate-slide-right:hover {
+              animation-play-state: paused;
+            }
+          `}
+        </style>
+        
+        {/* Container for the infinite scroll */}
+        <div className="animate-slide-right">
+          {/* We duplicate the array multiple times so the screen is always full while it scrolls seamlessly */}
+          {[...promotionalAds, ...promotionalAds, ...promotionalAds, ...promotionalAds, ...promotionalAds, ...promotionalAds].map((ad, index) => (
+            <div 
+              key={`${ad.id}-${index}`} 
+              className="w-[280px] sm:w-[350px] flex items-center bg-white rounded-lg shadow-sm border border-gray-100 p-2 mx-3 relative flex-shrink-0 group hover:border-brand-wine/40 hover:shadow-md transition-all"
+            >
+              {/* AD Badge */}
+              <div className="absolute top-1.5 right-2 z-20 bg-black/70 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded">
+                Ad
+              </div>
+
+              {/* Small Image */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 overflow-hidden rounded-md">
+                <img 
+                  src={ad.image} 
+                  alt={ad.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                />
+              </div>
+
+              {/* Compact Text Content */}
+              <div className="flex-1 ml-3 whitespace-normal">
+                <h3 className="font-bold text-sm sm:text-base text-brand-charcoal leading-tight mb-0.5">
+                  {ad.title}
+                </h3>
+                <p className="text-gray-500 text-[11px] sm:text-xs line-clamp-1 sm:line-clamp-2 mb-1">
+                  {ad.description}
+                </p>
+                
+                <Link 
+                  to={ad.linkUrl} 
+                  className="text-brand-wine text-xs font-bold hover:underline inline-flex items-center"
+                >
+                  {ad.linkText} <ArrowRight size={12} className="ml-1" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 2. CATERING CATEGORIES SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -205,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-{/* 4. HOW IT WORKS SECTION */}
+      {/* 4. HOW IT WORKS SECTION */}
       <section className="py-24 bg-brand-cream/30 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -255,7 +335,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. BOTTOM CTA SECTION (NEW) */}
+      {/* 5. BOTTOM CTA SECTION */}
       <section className="bg-brand-wine text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Ready to make your event unforgettable?</h2>
